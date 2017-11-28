@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<title>HONEYPOT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Images/1.png" type="image/gif" sizes="16x16">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    <div class="w3-container w3-black w3-padding-32" > .w3-sidebar a {
+        font-family: "Roboto", sans-serif;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, .w3-wide {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    #products {
+        height: 250px;
+    }
+
+        #products img {
+            max-height: 50%;
+        }
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-hide-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:30;width:240px" id="mySidebar">
+        <div class="w3-container w3-padding-32" style="background-color:rgb(255, 204, 0)">
+            <div class="w3-container w3-display-container w3-padding-16">
+                <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+                <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                <img src="Images/newLogo.jpeg" style="width:100%">
+
+            </div>
+            <div class="w3-padding-64 w3-large w3-text-gray-dark" style="font-weight:bold">
+
+                <div class="w3-container">
+                    <button onclick="document.getElementById('id21').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Monitors</button>
+
+                    <div id="id21" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <div class="w3-container w3-black">
+                                <span onclick="document.getElementById('id21').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                <header>
+                                    <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                        <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                        <img src="#" style="width:10%">
+                                </header>
+                                <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                    <h4 class="w3-text-black"><b> Top rated monitors:</b></h4>
+                                    <img src="Images/Eizo.jpg" width="25%"></img><p>Eizo Resolution: 4096*2160  SIZE:31.1" Resp-time: 9ms  price: 6000.00$</p><br>
+                                    <img src="Images/BenQ.jpg" width="25%"></img><p>BenQ Resolution: 190*1080  SIZE: 21.5" Resp-time 5ms price: 85.00$</p><br>
+                                    <img src="Images/Asus.jpg" width="25%"></img><p>Asus Resolution: 1920*1080  SIZE: 23" Resp-time 5ms price: 120.99$</p><br>
+                                    <img src="Images/Acer1.jpg" width="25%"></img><p>Acer Resolution: 2560*1440  SIZE: 27" Resp-time 1ms price: 475.99$</p><br>
+                                    <p></p>
+                                    <footer class="w3-black" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-container">
+                        <button onclick="document.getElementById('id22').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Power Supply</button>
+                        <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                            <div id="id22" class="w3-modal">
+                                <div class="w3-modal-content">
+                                    <div class="w3-container w3-black">
+                                        <span onclick="document.getElementById('id22').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                        <header>
+                                            <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                <img src="Images/1.png" style="width:10%">
+                                        </header>
+                                        <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                            <img src="Images/EVGA SuperNOVA 650.jpg" width="25%" /><p>EVGA SuperNova 650  SERIES: SuperNOVA NEX  EFFICIENY: 80+ Gold  Watts: 650w Price: $89.99</p><br />
+                                            <img src="Images/SeaSonic SS-620GM2.jpg" width="25%" /><p>SeaSonic SS-620GM2  SERIES: EVO Edition  EFFICIENY: 80+ Bronze  Price: $120.99</p><br />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-left-align" style="background-color:rgb(255, 204, 0)" id="myBtn">
+                            CPU <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="w3 w3-padding-10" style="background-color:rgb(255, 204, 0)">
+                            <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+                                <a href="#" class="w3-bar-item w3-button " style="background-color:rgb(255, 204, 0)"><i class="fa fa-caret-right w3-margin-right"></i></a>
+                                <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                                <body>
+                                    <div class="w3-container">
+                                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">CPU</button>
+                                        <div id="id01" class="w3-modal">
+                                            <div class="w3-modal-content">
+                                                <div class="w3-container w3-black">
+                                                    <header>
+                                                        <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                            <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                            <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                    </header>
+                                                    <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                        <img src="Images/AMD Ryzen 5 1600.jpg" /><p>AMD Ryzen 5 1600  Speed: 3.2GHz  Cores: 4   TDP: 65W  Price: $150.00</p><br />
+                                                        <img src="Images/Intel Core i5-7600K.jpg" /><p>Intel Core i5-7600k  Speed: 3.8GHz  Cores: 6   TDP: 91W Price: $90.00</p><br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w3-container">
+                                        <button onclick="document.getElementById('id51').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">CPU Cooler</button>
+
+                                        <div id="id51" class="w3-modal">
+                                            <div class="w3-modal-content">
+                                                <div class="w3-container w3-black">
+                                                    <header>
+                                                        <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                            <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                            <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                    </header>
+                                                    <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                        <span onclick="document.getElementById('id51').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                        <img src="Images/Cooler Master Hyper 212 EVO.jpg" /><p>Cooler Master Hyper 212 EVO  Fan-RPM: 600-2000 RPM Price: $89.99</p><br />
+                                                        <img src="Images/Corsair H100i v2.jpg" /><p>Corsair H100i v2 Fan-RPM: 2435 RPM  Price: $120.00</p><br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w3-container">
+                                        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Motherboards</button>
+
+                                        <div id="id02" class="w3-modal">
+                                            <div class="w3-modal-content">
+                                                <div class="w3-container w3-black">
+                                                    <header>
+                                                        <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                            <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                            <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                    </header>
+                                                    <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                        <img src="Images/ASRock AB350M Pro4.jpg" /><p>ASRock AB350M Pro 4: Socket/CPU AM4  Max RAM 64GB Price: $86.99</p>
+                                                        <img src="Images/MSI Z270-A PRO.jpg" /><p>MSI Z270-A PRO:  Socket/CPU LGA1151   Max RAM 64GB Price: $95.99</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w3-container">
+                                        <button onclick="document.getElementById('id03').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">External</br> Hard Drive</button>
+
+                                        <div id="id03" class="w3-modal">
+                                            <div class="w3-modal-content">
+                                                <div class="w3-container w3-black">
+                                                    <header>
+                                                        <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                            <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                            <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                    </header>
+                                                    <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                        <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                        <img src="Images/Buslink.jpg" /><p>External Buslink Hard Drive: Series CipherShield Price: $1550.99</p>
+                                                        <img src="Images/Seagate Backup Plus Slim.jpg" /><p>External Seagate Backup Plus Slim Hard Drive: Series Backup Plus Slim Price: $65.99</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w3-container">
+                                        <button onclick="document.getElementById('id04').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Hard Drives</button>
+
+                                        <div id="id04" class="w3-modal">
+                                            <div class="w3-modal-content">
+                                                <div class="w3-container w3-black">
+                                                    <header>
+                                                        <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                            <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                            <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                    </header>
+                                                    <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                        <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                        <img src="Images/Crucial CT525MX300SSD1.jpg" /><p>Crucial CT525MX300SSD1 Hard Drive: Series MX300  Capacity: 275GB Price: $85.00</p>
+                                                        <img src="Images/Western Digital WD10EZEX.jpg" /><p>Western Digital WD10EZEX Hard Drive: Series Caviar Blue  Capacity: 1TB  Price: $49.99</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <a onclick="myAccFunc2()" href="javascript:void(0)" class="w3-button w3-block w3-left-align" style="background-color:rgb(255, 204, 0)" id="myBtn">
+                                Keyboards<br />& Mouse<i class="fa fa-caret-down"></i>
+                            </a>
+                            <div class="w3 w3-padding-10" style="background-color:rgb(255, 204, 0)">
+                                <div id="demoAcc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+                                    <a href="#" class="w3-bar-item w3-button " style="background-color:rgb(255, 204, 0)"><i class="fa fa-caret-right w3-margin-right"></i></a>
+                                    <div class="w3-container">
+                                        <button onclick="document.getElementById('id06').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">CAC Keyboards</br>Gaming</br>Keyboards </button>
+
+                                        <div id="id06" class="w3-modal">
+                                            <div class="w3-modal-content">
+                                                <div class="w3-container w3-black">
+                                                    <header>
+                                                        <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                            <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                            <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                    </header>
+                                                    <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                        <span onclick="document.getElementById('id06').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                        <h4><b>CAC Keyboards:</b></h4>
+                                                        <img src="Images/Dell.jpg" /><p>Dell CAC keyboards: Price: $30.00</p>
+														<img src="Images/CAC card.jpg"/><p>CAC Card: Price: $20.00</p>
+                                                        <h4><b>Gaming Keyboards:</b></h4>
+                                                        <img src="Images/Cooler Master Devastator II.jpg" /><p>Cooler Master Devastator II: Price $30.99</p>
+                                                        <img src="Images/Logitech diNovo Edge.jpg" /><p>Logitech diNovo Edge: Price $1050.99</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w3-container">
+                                        <button onclick="document.getElementById('id07').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Mouses</button>
+
+                                        <div id="id07" class="w3-modal">
+                                            <div class="w3-modal-content">
+                                                <div class="w3-container w3-black">
+                                                    <header>
+                                                        <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                            <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                            <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                    </header>
+                                                    <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                        <span onclick="document.getElementById('id07').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+														<img src="Images/Corsair M65 PRO RGB FPS.jpg" /><p>Corsair M65 Pro RGB FPS: Conncetion: Wired Price: $39.99</p>
+                                                        <img src="Images/Logitech G502.jpg" /><p>Logitech G502: Conncetion: Wired  Price: $59.99</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w3-container">
+                                    <button onclick="document.getElementById('id08').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Optical Drive</button>
+
+                                    <div id="id08" class="w3-modal">
+                                        <div class="w3-modal-content">
+                                            <div class="w3-container w3-black">
+                                                <header>
+                                                    <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                        <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                        <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                </header>
+                                                <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                    <span onclick="document.getElementById('id08').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                    <img src="Images/Lite-On iHAS124-14.jpg" /><p>Lite-On Optical Drive: Price: &12.99</p>
+                                                    <img src="Images/Asus DRW.jpg" /><p>Asus DRW Optical Drive: $20.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w3-container">
+                                    <button onclick="document.getElementById('id09').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Software</button>
+
+                                    <div id="id09" class="w3-modal">
+                                        <div class="w3-modal-content">
+                                            <div class="w3-container w3-black">
+                                                <header>
+                                                    <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                        <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                        <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                </header>
+                                                <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                    <span onclick="document.getElementById('id09').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                    <img src="Images/Microsoft Windows 7 Ultimate (64-bit).jpg" /><p>Microsoft Window 7 Ultimate (64-bit): Price: Free!!!</p>
+                                                    <img src="Images/Microsoft Windows 8 Pro (64-bit).jpg" /><p>Microsoft Window 8 Pro (64-bit): Price: $210.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w3-container">
+                                    <button onclick="document.getElementById('id10').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Video Card</button>
+
+                                    <div id="id10" class="w3-modal">
+                                        <div class="w3-modal-content">
+                                            <div class="w3-container w3-black">
+                                                <header>
+                                                    <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                        <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                        <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                </header>
+                                                <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                    <span onclick="document.getElementById('id10').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                    <img src="Images/Video Card MSI GTX 1050 Ti 4G OC.jpg" /><p>Video Card MSI GTX 1050 Ti 4G: Memory: 4GB Price: $199.99</p>
+                                                    <img src="Images/Zotac ZT-P10510A-10L.jpg" /><p>Zotac ZT-P10510A-10L Video Cards: Memory: 4GB Price: $250.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w3-container">
+                                    <button onclick="document.getElementById('id11').style.display='block'" class="w3-button" style="background-color:rgb(255, 204, 0)">Networking NIC</button>
+
+                                    <div id="id11" class="w3-modal">
+                                        <div class="w3-modal-content">
+                                            <div class="w3-container w3-black">
+                                                <header>
+                                                    <div class="w3-container w3-padding-34" style="background-color:rgb(255, 204, 0)">
+                                                        <h2 class="w3-wide"><b>HoneyPot</b><br><b>PC Parts</b></h2>
+                                                        <img src="Images/newLogo.jpeg" style="width:10%" />
+                                                </header>
+                                                <div class="w3-container w3-padding-34 w3-light-grey w3-text-black">
+                                                    <span onclick="document.getElementById('id11').style.display='none'" class="w3-button w3-display-topright w3-blue">&times;</span>
+                                                    <img src="Images/Gigabyte GC-WB867D-I.jpg" /><p>Gigabyte GC-WB867D-I NIC Card: Price: $39.99</p>
+                                                    <img src="Images/TP-Link TL-WDN4800.jpg" /><p>TP-Link TL-WDN4800 NIC Card: $18.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div href="#" style="border-bottom:solid ;border-color: grey" /><br>
+                            </div>
+                            <a href="#footer" class="w3-bar-item w3-button w3-padding">Newsletter</a>
+                            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Help?</a>
+                            <a href="#" class="w3-bar-item w3-button w3-padding">Subscribe</a>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+        <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+        <!-- Top header -->
+        <header class="w3-container w3-xlarge" style="width:100%;">
+            <div class="w3-container w3-black w3-padding-32">
+                <p class="w3-left">Bulid your own pc!</p>
+                <p class="w3-right">
+                    <i class="fa fa-shopping-cart w3-margin-right"></i>
+                    <i class="fa fa-search"></i>
+                </p>
+        </header>
+
+        <div class="w3-container w3-text-back" id="">
+            <h4><b>Most Popular Items:</b></h4>
+        </div>
+
+        <!-- Product grid -->
+        <div class="w3-row w3-grayscale">
+            <div class="w3-col l3 s6">
+
+                <div class="w3-container" id="products">
+                    <img src="Images/CPU Intel Core i7-7700k.jpg" style="width:100%">
+                    <p>CPU: Intel Core i7-7700k<br><b>$352.89</b></p>
+                </div>
+                <div class="w3-container" id="products">
+                    <img src="Images/Storage Western Digital WD10EZEX.jpg" style="width:100%">
+                    <p>Storage: Western Digital WD10EZEX<br><b>$45.99</b></p>
+                </div>
+            </div>
+
+            <div class="w3-col l3 s6">
+                <div class="w3-container" id="products">
+                    <div class="w3-display-container">
+                        <img src="Images/Video Card MSI GTX 1050 Ti 4G OC.jpg" style="width:100%">
+                        <span class="w3-tag w3-display-topleft">New</span>
+                        <div class="w3-display-middle w3-display-hover">
+                            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <p>Video Card: MSI GTX 1050 Ti 4G OC<br><b>$185.23</b></p>
+                </div>
+                <div class="w3-container" id="products">
+                    <img src="Images/Power Supply Corsair CX550M.jpg" style="width:100%">
+                    <p>Power Supply: Corsair CX550M<br><b>$38.21</b></p>
+                </div>
+            </div>
+
+            <div class="w3-col l3 s6">
+                <div class="w3-container" id="products">
+                    <img src="Images/Memory G.Skill Ripjaws V series.jpg" style="width:100%">
+                    <p>Memory: G.Skill Ripjaws V series<br><b>$200.99</b></p>
+                </div>
+                <div class="w3-container" id="products">
+                    <div class="w3-display-container">
+                        <img src="Images/Operating System windows 10.jpg" style="width:100%">
+                        <span class="w3-tag w3-display-topleft">Sale</span>
+                        <div class="w3-display-middle w3-display-hover">
+                            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <p>Operating System: windows 10<br><b class="w3-text-black">$89.99</b></p>
+                </div>
+            </div>
+
+            <div class="w3-col l3 s6">
+                <div class="w3-container" id="products">
+                    <img src="Images/Case NZXT S340 (black).jpg" style="width:100%">
+                    <p>Case: NZXT S340 (black)<br><b>$69.99</b></p>
+                </div>
+                <div class="w3-container" id="products">
+                    <img src="Images/Optical Drive Pioneer BDC-207DBK.jpg" style="width:100%">
+                    <p>Optical Drive: Pioneer BDC-207DBK<br><b>$369.99</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscribe section -->
+        <div class="w3-container w3-dark-grey w3-padding-32">
+            <h1>Subscribe</h1>
+            <p>To get special offers and VIP treatment:</p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+            <button type="button" class="w3-button w3-blue w3-margin-bottom">Subscribe</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+            <div class="w3-row-padding">
+                <div class="w3-col s4">
+                    <h4>Contact</h4>
+                    <p>Questions? Go ahead.</p>
+                    <form action="/action_page.php" target="_blank">
+                        <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+                        <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+                        <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+                        <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+                        <button type="submit" class="w3-button w3-block w3-black">Send</button>
+                    </form>
+                </div>
+
+                <div class="w3-col s4">
+                    <h4>About</h4>
+                    <p><a href="#">About us</a></p>
+                    <p><a href="#">We're hiring</a></p>
+                    <p><a href="#">Support</a></p>
+                    <p><a href="#">Shipment</a></p>
+                    <p><a href="#">Payment</a></p>
+                    <p><a href="#">Gift card</a></p>
+                    <p><a href="#">Return</a></p>
+                    <p><a href="#">Help</a></p>
+                </div>
+
+                <div class="w3-col s4 w3-justify">
+                    <h4>Head Quaters</h4>
+                    <p><i class="fa fa-fw fa-map-marker"></i>755 Honey Pot Heights</p>
+                    <p>
+                        <i class="fa fa-fw fa-phone"></i>
+                        (804)412-3123
+                    </p>
+                    <p><i class="fa fa-fw fa-envelope"></i> HoneyPot2017@gmail.com</p>
+                    <h4>We accept</h4>
+                    <p><i class="fa fa-fw fa-cc-amex"></i> PayPAL</p>
+                    <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+                    <br>
+                    <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+                    <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+                    <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+                    <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+                    <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+                    <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- End page content -->
+    </div>
+
+    <!-- Newsletter Modal -->
+    <div id="newsletter" class="w3-modal" style="position: fixed">
+        <div class="w3-modal-content w3-animate-zoom" style="padding:30px">
+            <div class="w3-container w3-white w3-center">
+                <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+                <h2 class="w3-wide">Need Help?</h2>
+                <p>Let use know if you need any help.</p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+                <button type="button" class="w3-button w3-padding-large w3-blue w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+// Accordion
+function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+// Accordion
+function myAccFunc2() {
+    var x = document.getElementById("demoAcc2");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+    </script>
+
+</body>
+</html> 
+
+ 
+
