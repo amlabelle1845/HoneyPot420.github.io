@@ -1,0 +1,256 @@
+// unit 1.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+void screenloc(int x, int y);
+void box(int x, int y, int l, int b);
+
+void add_account(float *newCheckingBalance, float *newSavingBalance);
+void deposit(float* newCheckingBalance, float* newSavingBalance);
+void withdrawal(float* newCheckingBalance, float* newSavingBalance);
+void funds_transfer(float *newCheckingBalance, float *newSavingBalance);
+void acct_info(float *newCheckingBalance, float *newSavingBalance);
+void transaction_hist();
+
+int main(void)
+
+{
+	//Variable Declaratins
+	int option = 10; //intializing to 0
+	int keeprunning = 1; // dummy value to the loop
+	float checkingBalance = 0.00;
+	float savingBalance = 0.00;
+	float accountName = 0;
+
+	while (keeprunning == 1)
+
+	{
+		printf_s("%s", "==Main Menu==\n");
+		puts("\n1)Create New Account\n");
+		puts("2)Cash Deposit\n");
+		puts("3)Cash Withdrawal\n");
+		printf_s("\n4)Fund Transfer\n");
+		puts("5)Account Information\n");
+		puts("6)Transaction Informantion\n");
+		puts("7)Exit\n");
+		puts("Press a choice between the range\n\n");
+
+		//retrieve option
+		puts("Enter a number 1 to 7: \n");
+		scanf_s("%d", &option);
+
+
+		//comparing option from user input 
+		if (option == 1) {
+
+			//perform some action 
+			puts("Create a new account\n");
+			add_account(&checkingBalance, &savingBalance);
+		}
+		else if (option == 2) {
+			//perform some action
+			puts("Cash Deposit\n");
+			deposit(&checkingBalance, &savingBalance);
+		}
+		else if (option == 3) {
+			//perform some action
+			puts("Cash Withdrawal\n");
+			withdrawal(&checkingBalance, &savingBalance);
+		}
+		else if (option == 4) {
+			//perform some action
+			puts("Fund Transfer\n");
+			funds_transfer(&checkingBalance, &savingBalance);
+		}
+		else if (option == 5) {
+			//perform some action
+			puts("Account Information\n");
+			acct_info(&checkingBalance, &savingBalance);
+		}
+		else if (option == 6) {
+			//perform some action
+			puts("Transaction Information\n");
+			transaction_hist();
+		}
+		else if (option == 7) {
+			//perform some action
+			puts("Exit\n");
+
+			char exit = 'n';  //intialize the char
+
+			puts("Would you like to enter ? Enter [Yy,Nn]");
+			scanf_s("%s", &exit);
+
+			if (exit == 'y' || exit == 'Y') // checks for yes
+			{
+				puts("Goodbye\n");
+				keeprunning = 0; //stops the loop
+			}
+			else if (exit == 'N ' || exit == 'n') // checks for no
+			{
+				puts("contine");
+				keeprunning = 1; //keep going
+			}
+			else {
+				puts("contiune");
+				keeprunning = 1; // keep going
+			}
+		}
+		else {
+			//option not listed
+			puts("Error: Enter a number between 1 and 7\n\n\n");
+		}
+	}
+
+	return 0;
+}
+
+void add_account(float *newCheckingBalance, float *newSavingBalance)
+{
+	float savingsDeposit = 0.00;
+	float checkingDeposit = 0.00;
+
+
+
+	system("cls"); //clear out screen
+	printf_s("New Account\n\nOpening new account for MR.Bruh %c\n\n");
+
+	printf_s("\nProcess a case deposit for Savings\n");
+	scanf_s("%f", &savingsDeposit);
+
+	printf_s("\nProcess a case deposit for Checking\n");
+	scanf_s("%f", &checkingDeposit);
+
+	*newCheckingBalance = *newCheckingBalance + checkingDeposit; //add in the deposit
+	*newSavingBalance = *newSavingBalance + savingsDeposit;
+
+	printf_s("\nThe final savings balance is :\n");
+	printf_s("%.2f\n", *newSavingBalance);
+
+	printf_s("\nThe final checking balance is :\n");
+	printf_s("%.2f\n", *newCheckingBalance);
+
+}
+void deposit(float *newCheckingBalance, float *newSavingBalance)
+{
+	float savingsDeposit = 0.00;
+	float checkingDeposit = 0.00;
+
+	system("cls"); //clear out screen
+
+	printf_s("The checking balance is:%d\n", *newCheckingBalance);
+
+	printf_s("\nProcess a case deposit for Savings\n");
+	scanf_s("%f", &savingsDeposit);
+
+	printf_s("\nProcess a case deposit for Checking\n");
+	scanf_s("%f", &checkingDeposit);
+
+	*newCheckingBalance = *newCheckingBalance + checkingDeposit; //add in the deposit
+	*newSavingBalance = *newSavingBalance + savingsDeposit;
+
+	printf_s("\nThe final savings balance is :\n");
+	printf_s("%.2f\n", *newSavingBalance);
+
+	printf_s("\nThe final checking balance is :\n");
+	printf_s("%.2f\n", *newCheckingBalance);
+}
+void withdrawal(float *newCheckingBalance, float *newSavingBalance)
+{
+	float checkingWithdrawals = 0.00;   //declared vairbles
+	float savingWithdrawals = 0.00;
+
+	system("cls");
+
+	printf_s("The checking balance is %f\n", *newCheckingBalance);
+	printf("The savings balance is %f\n", *newSavingBalance);
+
+	printf_s("Enter checking account withdrawal amount\n");
+	scanf_s("%f", &checkingWithdrawals);
+
+	printf_s("Enter saving acccount withdrawal amount\n");
+	scanf_s("%f", &savingWithdrawals);
+
+
+	*newSavingBalance = *newSavingBalance - savingWithdrawals;  //add in the deposit
+	*newCheckingBalance = *newCheckingBalance - checkingWithdrawals; //add in the deposit
+
+
+	printf_s("The final savings account balance is :\n");
+	printf_s("%.2f\n\n", *newSavingBalance);
+
+	printf_s("The final checking account balance is :\n");
+	printf_s("%.2f\n\n", *newCheckingBalance);
+
+
+}
+void funds_transfer(float *newCheckingBalance, float *newSavingBalance)
+{
+	float checkingTransfer = 0.00;   //declared vairbles
+	float savingTransfer = 0.00;
+	int keeprunning = 0;
+	int i = 0;
+
+
+	char option = 3;
+	system("cls");
+
+
+	printf_s("\n1)To transfer saving to checking\n");
+	printf_s("\n2)to transfer checking to saving\n");
+	scanf_s("%s", &option);
+
+	if (option == '1')
+	{
+		system("cls");
+
+		printf_s("To transfer savings to checking\n");
+
+		printf_s("The checking balance is %.2f\n", *newCheckingBalance);
+		printf_s("The savings balance is %.2f\n", *newSavingBalance);
+
+		printf_s("Enter the saving transfer amount\n");
+		scanf_s("%f", &savingTransfer);
+
+		*newCheckingBalance = *newCheckingBalance + savingTransfer;
+		*newSavingBalance = *newSavingBalance - savingTransfer; // the final balance of the savings
+
+		printf_s("The checking balance is %.2f\n", *newCheckingBalance);
+		printf_s("The savings balance is %.2f\n", *newSavingBalance);
+	}
+	else if (option == '2')
+	{
+		system("cls");
+
+		printf_s("to transfer checking to saving\n");
+
+		printf_s("The checking balance is %.2f\n", *newCheckingBalance);
+		printf_s("The savings balance is %.2f\n", *newSavingBalance);
+
+		printf_s("Enter the checking transfer amount\n");
+		scanf_s("%f", &checkingTransfer);
+
+		*newCheckingBalance = *newCheckingBalance - checkingTransfer;  // the final balance of the checking
+		*newSavingBalance = *newSavingBalance + checkingTransfer;
+
+		printf_s("The checking balance is %.2f\n", *newCheckingBalance);
+		printf_s("The savings balance is %.2f\n", *newSavingBalance);
+
+	}
+
+}
+void acct_info(float *newCheckingBalance, float *newSavingBalance)
+{
+	system("cls");
+	printf_s("Current Account Balance for customer MR.Bruh\n\n");
+	printf_s("Current checking account balance is: %.2f\n\n", *newCheckingBalance);
+	printf_s("Current saving account balance is: %.2f\n\n", *newSavingBalance);
+}
+void transaction_hist()
+{
+	system("cls");
+	printf_s("\n\nThere is no tranaction history available at this time\n\n");
+}
