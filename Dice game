@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+ <body>
+	<p>Roll the dice</p>
+	<p id="score"></p>
+	<input type="button" onclick="rollDice(), scoreCal()">Click to roll dice</button>
+	<input type="button" onclick="myReset()" value="Reset">
+	<p id="number"></p>
+	<p id="1number"></p>
+	<img id="dice1" src= "dice 1.png" alt= "dice" style= "width:304px;height:228p;">
+	<img id="dice2" src= "dice 2.png" alt= "dice" style= "width:304px;height:228p;">
+	<img id="dice3" src= "dice 3.png" alt= "dice" style= "width:304px;height:228p;">
+	<img id="dice4" src= "dice 4.png" alt= "dice" style= "width:304px;height:228p;">
+	<img id="dice5" src= "dice five.png" alt= "dice" style= "width:304px;height:228p;">
+	<img id="dice6" src= "dice 6.png" alt= "dice" style= "width:304px;height:228p;">
+		
+		<script>
+		var score = 0;
+		
+			function myFunction() {
+			//*var x = Math.floor((Math.random() * 6) + 1);
+			document.getElementById("number").innerHTML = x;
+			
+			}
+			function myReset() {
+			score = 0;
+			document.getElementById("score").innerHTML=0;
+			}
+			function displayResult() {
+			document.getElementById("dice").innerHTML = "Have a nice day!";
+			}
+			function rollDice() {
+			var x = Math.floor((Math.random() * 6) + 1);
+			console.log("chase1")
+		switch (x) 
+		{
+			
+			case 1:
+			document.getElementById("dice1").style.visibility="visible";
+			document.getElementById("dice2").style.visibility="hidden";
+			document.getElementById("dice3").style.visibility="hidden";
+			document.getElementById("dice4").style.visibility="hidden";
+			document.getElementById("dice5").style.visibility="hidden";
+			document.getElementById("dice6").style.visibility="hidden";
+			
+			break;
+			
+			case 2:
+			
+			document.getElementById("dice1").style.visibility="hidden";
+			document.getElementById("dice2").style.visibility="visible";
+			document.getElementById("dice3").style.visibility="hidden";
+			document.getElementById("dice4").style.visibility="hidden";
+			document.getElementById("dice5").style.visibility="hidden";
+			document.getElementById("dice6").style.visibility="hidden";
+			break;
+			
+			case 3:
+			document.getElementById("dice1").style.visibility="hidden";
+			document.getElementById("dice2").style.visibility="hidden";
+			document.getElementById("dice3").style.visibility="visible";
+			document.getElementById("dice4").style.visibility="hidden";
+			document.getElementById("dice5").style.visibility="hidden";
+			document.getElementById("dice6").style.visibility="hidden";
+			break;
+			
+			case 4:
+			document.getElementById("dice1").style.visibility="hidden";
+			document.getElementById("dice2").style.visibility="hidden";
+			document.getElementById("dice3").style.visibility="hidden";
+			document.getElementById("dice4").style.visibility="visible";
+			document.getElementById("dice5").style.visibility="hidden";
+			document.getElementById("dice6").style.visibility="hidden";
+			break;
+			
+			case 5:
+			document.getElementById("dice1").style.visibility="hidden";
+			document.getElementById("dice2").style.visibility="hidden";
+			document.getElementById("dice3").style.visibility="hidden";
+			document.getElementById("dice4").style.visibility="hidden";
+			document.getElementById("dice5").style.visibility="visible";
+			document.getElementById("dice6").style.visibility="hidden";
+			break;
+			
+			case 6:
+			document.getElementById("dice1").style.visibility="hidden";
+			document.getElementById("dice2").style.visibility="hidden";
+			document.getElementById("dice3").style.visibility="hidden";
+			document.getElementById("dice4").style.visibility="hidden";
+			document.getElementById("dice5").style.visibility="hidden";
+			document.getElementById("dice6").style.visibility="visible";
+			break;
+			
+		}
+		}
+		function scoreCal()
+		{
+			if (document.getElementById("dice1").style.visibility=="visible")
+				score+= 1;
+			if (document.getElementById("dice2").style.visibility=="visible")
+				score+= 2;
+			if (document.getElementById("dice3").style.visibility=="visible")
+				score+= 3;
+			if (document.getElementById("dice4").style.visibility=="visible")
+				score+= 4;
+			if (document.getElementById("dice5").style.visibility=="visible")
+				score+= 5;
+			if (document.getElementById("dice6").style.visibility=="visible")
+				score+= 6;
+			document.getElementById(id ="score").innerHTML= score; console.log("chasefgrtfhrhey")
+		}	
+			
+		</script>
+
+	</body>
+</html>
